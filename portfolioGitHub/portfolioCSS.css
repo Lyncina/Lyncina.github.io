@@ -1,0 +1,225 @@
+:root {
+  --btn-main: hsla(90, 25%, 50%, 1);
+  --btn-light: hsla(90, 30%, 80%, 1);
+  --btn-dark: hsla(90, 60%, 5%, 1);
+
+  --nav-text: hsla(90, 50%, 90%, 1);
+  --nav-hover: hsla(90, 40%, 60%, 1);
+
+  --bg-light: hsla(90, 20%, 70%, 1);
+  --bg-dark: hsla(90, 50%, 25%, 1);
+  --text-light: hsla(90, 30%, 80%, 1);
+  --text-dark: hsla(90, 70%, 15%, 1);
+  --shadow-light: hsla(90, 30%, 70%, 1);
+  --shadow-dark: hsla(90, 70%, 5%, 1);
+
+  --project-border: hsla(90, 25%, 40%, .5);
+  --project-border-hover: hsla(90, 25%, 60%, .5);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:2;
+  height: 5rem;
+  width: 100%;
+  padding-top: .2rem;
+  padding-bottom: .1rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  background-image: linear-gradient(180deg, var(--btn-dark) 0%, var(--btn-main) 2%, var(--btn-main) 80%, var(--btn-light) 97%, var(--btn-dark) 105%);
+  border-bottom: 1.5px solid var(--btn-dark);
+  border-radius: 0 0 10px 10px;
+  font-size: 2rem;
+  font-family: Verdana, Arial, sans-serif;
+}
+
+#navbar > a {
+  color: var(--nav-text);
+  text-shadow: 0 0 10px var(--shadow-dark);
+}
+
+#navbar > a:hover {
+  text-shadow: 0 0 3px var(--nav-hover), 0 0 10px var(--shadow-dark);
+}
+
+.border {
+  color: var(--nav-text);
+  text-shadow: 0 0 10px var(--shadow-dark);
+}
+
+label {
+  position: absolute;
+  top: 5rem;
+  left: .5rem;
+  z-index: 1;
+}
+
+select {
+  border-radius: 5px;
+  background-color: hsla(0, 0%, 100%, .4);
+}
+
+select:focus {
+  outline: 2px solid black;
+}
+
+#welcome-section {
+  height: 100vh;
+  background-color: var(--bg-light);
+  padding-top: 40vh;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  text-align: center;
+  color: var(--text-dark);
+  font-style: italic;
+  font-size: 1.5rem;
+  font-family: Verdana, Arial, sans-serif;
+}
+
+#projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 4vw;
+  background-color: var(--bg-dark);
+}
+
+#projects > h2 {
+  flex: 100%;
+  max-width: 90%;
+  color: var(--text-light);
+  text-shadow: 0 0 10px var(--nav-dark);
+  text-align: center;
+  font-style: italic;
+  font-size: 2rem;
+  font-family: Verdana, Arial, sans-serif;
+}
+
+.project-tile {
+  flex: 30%;
+  max-width: 26%;
+  margin: 3% 3vw;
+  padding: 5px;
+  background-image: linear-gradient(0deg, var(--btn-light) 0%, var(--btn-main) 10%);
+  border: 2px solid var(--project-border);
+  box-shadow: 0 0 5px 0 var(--btn-dark);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.project-tile:hover {
+  border: 2px solid var(--project-border-hover);
+  box-shadow: 0 0 15px 0 var(--btn-dark);
+}
+
+.project-name {
+  color: var(--text-dark);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-shadow: 0 .8px 1px var(--shadow-light);
+}
+
+.project-name > img {
+  width: 90%;
+  margin: 15px 5%;
+  box-shadow: 0 0 5px 0 var(--text-dark);
+}
+
+#contact {
+  height: 100vh;
+  padding-top: 30vh;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  text-align: center;
+  font-style: italic;
+  font-size: 1rem;
+  font-family: Verdana, Arial, sans-serif;
+}
+
+.social-icons {
+  height: 3rem;
+}
+
+.social-icons:hover {
+  box-shadow: 0 0 5px 1px var(--text-dark);
+  border-radius: 13px;
+  background: linear-gradient(var(--nav-text) 15%, var(--btn-main) 65%);
+}
+
+/*Tablets, smaller screens*/
+@media screen and (max-width: 800px) {
+
+  #welcome-section {
+    padding-top: 40vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+
+  .project-tile {
+    flex: 40%;
+    max-width: 50%;
+  }
+}
+
+/*Cell phones*/
+@media screen and (max-width: 550px) {
+
+  #navbar {
+    font-size: min(14vw, 1.3rem);
+  }
+
+  .border {
+    padding: 2px;
+  }
+
+  #welcome-section {
+    padding-top: 35vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    font-size: 1.3rem;
+  }
+
+  .project-tile {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/*Smallest of screens*/
+@media screen and (max-width: 285px) {
+
+  #navbar {
+    padding: .5px 5px 2px 5px;
+  }
+
+  #navbar > a {
+    flex: 100%;
+    text-align: right;
+  }
+
+  .border {
+    display: none;
+  }
+}
